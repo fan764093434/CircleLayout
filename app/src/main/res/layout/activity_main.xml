@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:RoundLayout="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.fsw.circlelayout.widget.CircleRelativeLayout
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        RoundLayout:roundLayoutRadius="120">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/icon_test" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="#44000000"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="当前位置：杭州市西湖区"
+                android:textColor="#0000ff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="精确到50M"
+                android:textColor="#0000ff"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </com.fsw.circlelayout.widget.CircleRelativeLayout>
+</LinearLayout>
