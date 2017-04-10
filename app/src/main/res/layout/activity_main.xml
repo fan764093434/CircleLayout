@@ -7,7 +7,7 @@
     <com.fsw.circlelayout.widget.CircleRelativeLayout
         android:layout_width="240dp"
         android:layout_height="240dp"
-        RoundLayout:roundLayoutRadius="120">
+        RoundLayout:roundLayoutRadius="120dp">
 
         <ImageView
             android:layout_width="match_parent"

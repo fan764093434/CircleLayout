@@ -1,6 +1,7 @@
 package com.fsw.circlelayout.widget;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Path;
@@ -19,7 +20,7 @@ public class CircleRelativeLayout extends RelativeLayout {
     /**
      * 默认值
      */
-    private float roundLayoutRadius = 0f;
+    private float roundLayoutRadius = 0;
     /**
      * 方形path和RectF
      */
@@ -33,7 +34,7 @@ public class CircleRelativeLayout extends RelativeLayout {
     public CircleRelativeLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.RoundLayout);
-        roundLayoutRadius = typedArray.getDimensionPixelSize(R.styleable.RoundLayout_roundLayoutRadius, (int) roundLayoutRadius);
+        roundLayoutRadius = typedArray.getDimension(R.styleable.RoundLayout_roundLayoutRadius, roundLayoutRadius);
         typedArray.recycle();
         init();
     }
@@ -46,7 +47,7 @@ public class CircleRelativeLayout extends RelativeLayout {
 
     private void setRoundPath() {
         //添加一个圆角矩形到path中, 如果要实现任意形状的View, 只需要手动添加path就行
-        roundPath.addRoundRect(rectF, roundLayoutRadius, roundLayoutRadius, Path.Direction.CW);
+        roundPath.addRoundRect(rectF, dp2px(roundLayoutRadius), dp2px(roundLayoutRadius), Path.Direction.CW);
     }
 
     /**
@@ -72,4 +73,15 @@ public class CircleRelativeLayout extends RelativeLayout {
         }
         super.draw(canvas);
     }
+
+    /**
+     * 将dip或dp值转换为px值，保证尺寸大小不变
+     *
+     * @param dipValue
+     * @return
+     */
+    public int dp2px(float dipValue) {
+        return (int) (dipValue * Resources.getSystem().getDisplayMetrics().density + 0.5f);
+    }
+
 }
