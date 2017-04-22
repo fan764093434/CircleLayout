@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.fsw.circlelayout.widget.CircleRelativeLayout
+    <com.fsw.circellibary.CircleRelativeLayout
         android:layout_width="240dp"
         android:layout_height="240dp"
         RoundLayout:roundLayoutRadius="120dp">
@@ -37,5 +37,5 @@
                 android:textColor="#0000ff"
                 android:textSize="12sp" />
         </LinearLayout>
-    </com.fsw.circlelayout.widget.CircleRelativeLayout>
+    </com.fsw.circellibary.CircleRelativeLayout>
 </LinearLayout>
